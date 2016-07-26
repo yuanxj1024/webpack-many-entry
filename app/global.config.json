@@ -1,0 +1,11 @@
+{
+  "random": true,
+  "baseScript": [
+    "jquery/dist/jquery.min.js",
+    "underscore/underscore-min.js"
+  ],
+  "baseStyle": [
+
+  ],
+  "cdn": ""
+}
