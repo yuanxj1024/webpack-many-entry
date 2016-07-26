@@ -1,7 +1,7 @@
-//- - var complie = htmlWebpackPlugin.options.globalConfig
-//- - var src = complie.cdn || '/link/'
-//- - var map = complie.baseScript || []
-- var src = cdn;
-- var map = baseScript;
+- var complie = htmlWebpackPlugin.options.globalConfig
+- var src = complie.cdn || '/link/'
+- var map = complie.baseScript || []
+//- var src = cdn;
+//- var map = baseScript;
 each item in map
     script(type="text/javascript",src=src+item)
