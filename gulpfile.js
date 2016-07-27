@@ -7,6 +7,8 @@ var rename = require('gulp-rename');
 var jadeData = require('gulp-data');
 var jade = require('gulp-jade');
 
+var browser = require('browser-sync');
+var browserSync = browser.create();
 
 var path = {
   jade: './app/src/**/*.jade',
@@ -16,47 +18,66 @@ var path = {
     './app/www/**/*.html'
   ],
   html: './test/**/**/index.*.html',
+  img: './app/src/**/img/*.*',
   plugins: [
     './app/src/plugins/**/*.*',
     './app/src/custom_plugins/**/*.*'
+  ],
+  watch: [
+    './app/www/**/*.js',
+    './app/www/**/*.css',
+  ],
+  watchImg: [
+    './app/www/**/img/*.*',
+  ],
+  release: [
+    './app/src/plugins/**/*.*',
+    './app/src/custom_plugins/**/*.*',
+    './app/src/**/img/*.*'
   ]
 }
 
-
 gulp.task('clean', function () {
-  rimraf.sync('./app/www');
+  rimraf.sync('./app/dist');
 });
 
-gulp.task('copyPlugins', function () {
+gulp.task('copyPlugins', ['copyImages'], function () {
   return gulp.src(path.plugins, {
       base: './app/src/'
     })
     .pipe(gulp.dest('app/www/'));
 });
 
-
-var rev = new RevAll();
-
-gulp.task('rename', function () {
-  return gulp.src(path.html)
-    .pipe(rename('index.html'))
-    .pipe(gulp.dest('./rename/'));
-});
-
-// 编译jade
-gulp.task('build:jade', function () {
-  return gulp.src(path.jade, {
+gulp.task('copyImages', function () {
+  return gulp.src(path.img, {
       base: './app/src/'
     })
-    .pipe(jadeData(function (file) {
-      return require('./app/global.config.json');
-    }))
-    .pipe(jade())
-    .pipe(gulp.dest('./app/www/'));
+    .pipe(gulp.dest('app/www/'));
 });
 
-gulp.task('release', function () {
-  return gulp.src(path.rev)
-    .pipe(rev.revision())
-    .pipe(gulp.dest('test'));
+gulp.task('server', function () {
+  browserSync.init({
+    server: './app/www/',
+    port: 4000
+  });
+  // gulp.watch(path.watchImg).on('change', function (file) {
+  //   gulp.start('copyImages');
+  //   browserSync.reload();
+  // });
+  gulp.watch(path.watch).on('change', browserSync.reload);
+});
+
+
+// 发布
+
+
+gulp.task('release:copyFiles', ['clean'], function () {
+  return gulp.src(path.release, {
+      base: './app/src/'
+    })
+    .pipe(gulp.dest('app/dist/'));
+});
+
+gulp.task('release', ['release:copyFiles'], function () {
+  rimraf.sync('./app/dist/img');
 });

@@ -1,0 +1,15 @@
+{
+	# "extends": "airbnb/legacy",
+	"parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+          impliedStrict: true
+        }
+  },
+  "env":{
+  	"jquery":true,
+  	"commonjs":true,
+  	"browser":true
+  }
+}

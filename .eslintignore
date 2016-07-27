@@ -1,0 +1,9 @@
+
+bin
+node_modules
+
+app/src/_
+
+app/src/plugins
+
+app/www

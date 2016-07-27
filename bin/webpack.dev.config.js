@@ -61,12 +61,6 @@ function getFileName(name) {
  */
 var config = {
   entry: entrys,
-  // entry: {
-  //   // '360/20150601p1/index': './app/src/360/20150601p1/index.js'
-  //   // '360/20150722p2/defaut': './app/src/360/20150722p2/index.js'
-  //   '20150601p1': './app/src/360/20150601p1/index.js',
-  //   '20150722p2': './app/src/360/20150722p2/index.js'
-  // },
   output: {
     path: path.resolve(containerPath, './app/www/'),
     publicPath: './',
@@ -93,7 +87,7 @@ var config = {
         exclude: /(node_modules)/
       }, {
         test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader?limit=8192&name=images/[name].[ext]'
+        loader: 'url-loader?limit=8192&name=img/[name].[ext]?[hash:8]'
       }
     ]
   },
@@ -103,10 +97,9 @@ var config = {
     extensions: ['', '.js', '.css', '.scss', '.jade', '.png', '.jpg']
   },
   externals: {
-    jquery: 'window.jQuery',
+    // jquery: 'window.jQuery',
     // backbone: 'window.Backbone',
-    underscore: 'window._',
-    webim: 'window.webim'
+    // underscore: 'window._'
   }
 };
 module.exports = config;

@@ -7,7 +7,8 @@ function getEntry(sourcePath) {
   var basename;
   sourcePath = sourcePath || './app/src/*/*/*.jade';
   glob.sync(sourcePath).forEach(function (entry) {
-    if (entry.indexOf('/_/') < 0) {
+    // if (entry.indexOf('/_/') < 0) {
+    if (!/\/_\/|\/plugins\/|\/custom_plugins\//g.test(entry)) {
       var basename = entry.replace('./app/src/', '');
       basename = basename.substr(0, basename.lastIndexOf('.'));
       entrys[basename] = entry;

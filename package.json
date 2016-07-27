@@ -5,9 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --colors --config bin/webpack.dev.config.js",
-    "predev": "gulp copyPlugins",
-    "build": "gulp rename"
+    "dev": "webpack --colors --watch --config bin/webpack.dev.config.js",
+    "predev": "npm run copy",
+    "copy": "gulp copyPlugins",
+
+    "build": "webpack --colors --config bin/webpack.release.config.js --optimize-minimize",
+    "release": "gulp release"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +18,11 @@
     "browser-sync": "^2.13.0",
     "css-loader": "^0.23.1",
     "eslint": "^3.1.1",
+    "eslint-config-airbnb": "^9.0.1",
     "eslint-loader": "^1.4.1",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "glob": "^7.0.5",
