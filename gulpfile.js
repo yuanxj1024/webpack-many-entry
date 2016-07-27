@@ -15,7 +15,11 @@ var path = {
     './app/www/**/*.css',
     './app/www/**/*.html'
   ],
-  html: './test/**/**/index.*.html'
+  html: './test/**/**/index.*.html',
+  plugins: [
+    './app/src/plugins/**/*.*',
+    './app/src/custom_plugins/**/*.*'
+  ]
 }
 
 
@@ -23,10 +27,17 @@ gulp.task('clean', function () {
   rimraf.sync('./app/www');
 });
 
+gulp.task('copyPlugins', function () {
+  return gulp.src(path.plugins, {
+      base: './app/src/'
+    })
+    .pipe(gulp.dest('app/www/'));
+});
+
+
 var rev = new RevAll();
 
-
-gulp.task('rename',function () {
+gulp.task('rename', function () {
   return gulp.src(path.html)
     .pipe(rename('index.html'))
     .pipe(gulp.dest('./rename/'));

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --colors --config bin/webpack.dev.config.js",
-    "ev111": "gulp build:jade",
+    "predev": "gulp copyPlugins",
     "build": "gulp rename"
   },
   "author": "",
