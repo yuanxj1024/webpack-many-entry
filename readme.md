@@ -2,12 +2,43 @@
 
 ### 如何基于本项目开始创建新项目
 
-1.	下载项目
-2.	替换remote
-3.	准备工作
-4.	开发模式
-5.	准备线上发布
+*	下载项目
+	
+```
+git clone xxxx
+```	
+	
+*	替换remote
 
+```
+	git remote remove origin
+	git remote add origin 新项目的git地址
+```
+
+*	准备工作
+
+```
+	npm install
+	
+	bower install
+```
+
+*	开发模式
+
+```
+	--启动一个命令行
+	npm run dev 
+	
+	--启动第二个命令行
+	npm run start
+	
+```	
+	
+*	准备线上发布
+	
+```
+	npm run build
+```	
 
 ### 项目使用要求
 *	基础技术

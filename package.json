@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+
+    "start": "gulp server",
+
     "dev": "webpack --colors --watch --config bin/webpack.dev.config.js",
     "predev": "npm run copy",
     "copy": "gulp copyPlugins",
 
     "webpack": "webpack --colors --config bin/webpack.release.config.js --optimize-minimize",
     "prewebpck":"gulp release",
-    "release": "gulp release",
 
     "build": "gulp release:dist-img",
     "prebuild":"npm run webpack"
