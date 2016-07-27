@@ -9,8 +9,12 @@
     "predev": "npm run copy",
     "copy": "gulp copyPlugins",
 
-    "build": "webpack --colors --config bin/webpack.release.config.js --optimize-minimize",
-    "release": "gulp release"
+    "webpack": "webpack --colors --config bin/webpack.release.config.js --optimize-minimize",
+    "prewebpck":"gulp release",
+    "release": "gulp release",
+
+    "build": "gulp release:dist-img",
+    "prebuild":"npm run webpack"
   },
   "author": "",
   "license": "ISC",

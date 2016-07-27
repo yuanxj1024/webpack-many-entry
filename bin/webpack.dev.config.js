@@ -19,22 +19,16 @@ globalConfig = complie(globalConfig);
 
 // 获取所有js入口
 var entrys = getEntry('./app/src/*/*/*.js');
-console.log('entrys=', entrys);
 // 获取所有页面
 var pages = getEntry('./app/src/*/*/*.jade');
-console.log(pages);
 
 // webpack处理的插件
 var plugins = [];
 plugins.push(extractSASS);
 plugins.push(new staticURLReplacePlugin());
 
-//  提取公共文件
-// plugins.push(new webpack.optimize.CommonsChunkPlugin('common', 'common.js'));
-
 // 处理jade页面
 for (var chunkname in pages) {
-  console.log('chunkname=', chunkname);
   var conf = {
     filename: chunkname + '.html',
     template: pages[chunkname],
@@ -51,7 +45,6 @@ for (var chunkname in pages) {
 }
 
 function getFileName(name) {
-  console.log('name = ', name);
   var arr = name.split('\/');
   return arr[arr.length - 1] + '.js';
 }
@@ -97,9 +90,9 @@ var config = {
     extensions: ['', '.js', '.css', '.scss', '.jade', '.png', '.jpg']
   },
   externals: {
-    // jquery: 'window.jQuery',
-    // backbone: 'window.Backbone',
-    // underscore: 'window._'
+    jquery: 'window.jQuery',
+    backbone: 'window.Backbone',
+    underscore: 'window._'
   }
 };
 module.exports = config;

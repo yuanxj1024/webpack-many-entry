@@ -5,6 +5,10 @@
     "underscore/underscore-min.js",
     "backbone/backbone-min.js"
   ],
+
+  "mobile":[
+
+  ],
   "baseStyle": [
 
   ],

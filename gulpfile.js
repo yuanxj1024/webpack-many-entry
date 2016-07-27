@@ -67,17 +67,15 @@ gulp.task('server', function () {
   gulp.watch(path.watch).on('change', browserSync.reload);
 });
 
-
 // 发布
 
-
-gulp.task('release:copyFiles', ['clean'], function () {
+gulp.task('release', ['clean'], function () {
   return gulp.src(path.release, {
       base: './app/src/'
     })
     .pipe(gulp.dest('app/dist/'));
 });
 
-gulp.task('release', ['release:copyFiles'], function () {
+gulp.task('release:dist-img', function () {
   rimraf.sync('./app/dist/img');
 });

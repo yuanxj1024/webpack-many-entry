@@ -5,3 +5,5 @@ node_modules
 test
 app/www
 app/www/
+app/dist
+app/dist/
