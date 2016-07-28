@@ -8,7 +8,7 @@
       ]
     }],
     "func-names": 0,
-    "vars-on-top": 0,
+    "vars-on-top": 2,
   },
   "env":{
   	"jquery":true,
