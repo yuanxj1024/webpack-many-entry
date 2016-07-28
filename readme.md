@@ -47,7 +47,11 @@ git clone xxxx
 	*	[jusior]()
 
 
-### 
+### 开发过程
+
+*	处理第三方插件
+	*	webpack alias		
+*	
 
 
 

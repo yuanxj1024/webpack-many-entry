@@ -2,9 +2,7 @@ var path = require('path');
 var containerPath = path.resolve('./');
 
 var alias = {
-  jquery: path.resolve(containerPath, './app/src/plugins/jquery/dist/jquery.min.js'),
-  backbone: path.resolve(containerPath, './app/src/plugins/backbone/backbone-min.js'),
-  underscore: '../../plugins/underscore/underscore-min.js'
+  tip: path.resolve(containerPath, './app/src/custom_plugins/tip')
 };
 
 console.log('alias = ', alias);
