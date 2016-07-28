@@ -1,5 +1,8 @@
 {
 	"extends": "airbnb/legacy",
+  "plugins": [
+    "import"
+  ],
 	"rules": {
     "semi": 2,
     "new-cap": [2, {
@@ -9,6 +12,14 @@
     }],
     "func-names": 0,
     "vars-on-top": 2,
+    "import/no-unresolved": [2, {commonjs: true, amd: true}]
+  },
+  "settings":{
+    "import/resolver":{
+      "webpack":{
+        "config": "./bin/webpack.dev.config.js"
+      }
+    }
   },
   "env":{
   	"jquery":true,
