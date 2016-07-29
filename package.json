@@ -13,9 +13,11 @@
     "prewebpck": "gulp release",
     "build": "gulp release:dist-img",
     "prebuild": "npm run webpack",
-    "eslint": "eslint ./app/src/",
-    "precommit": "npm run eslint"
+    "eslint": "eslint ./app/src/"
   },
+  "pre-commit":{
+   "run": "eslint"
+ },
   "author": "",
   "license": "ISC",
   "devDependencies": {

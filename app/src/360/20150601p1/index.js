@@ -6,7 +6,4 @@ $(function () {
   console.log('c is ', c);
   console.log('ready');
   console.log(a, b);
-  var test = function () {
-    return 'a';
-  };
 });
