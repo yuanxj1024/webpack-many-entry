@@ -1,7 +1,7 @@
 {
   "random": true,
   "baseScript": [
-    "jquery/dist/jquery.min.js",
+    "jquery2/jquery.min.js",
     "underscore/underscore-min.js"
   ],
 
