@@ -1,6 +1,6 @@
 #webpack+gulp多页面构建
 
-[`项目使用说明`]()
+[`项目使用说明`](https://github.com/yuanxj1024/webpack-many-entry/blob/master/howtouse.md)
 
 
 
