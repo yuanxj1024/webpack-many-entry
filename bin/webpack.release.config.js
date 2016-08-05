@@ -69,11 +69,11 @@ var config = {
         loader: 'raw',
         exclude: /(node_modules)/
       },
-      // {
-      //   test: /\.js$/,
-      //   loader: 'eslint-loader',
-      //   exclude: /(node_modules)/
-      // },
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules)/
+      },
       {
         test: /\.scss$/i,
         loader: extractSASS.extract(['css', 'sass'])
@@ -89,7 +89,7 @@ var config = {
   },
   plugins: plugins,
   resolve: {
-    // alias: alias,
+    alias: alias,
     extensions: ['', '.js', '.css', '.scss', '.jade', '.png', '.jpg']
   },
   externals: {
