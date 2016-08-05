@@ -10,7 +10,7 @@
     "predev": "npm run copy",
     "copy": "gulp copyPlugins",
     "webpack": "webpack --colors --config bin/webpack.release.config.js --optimize-minimize",
-    "prewebpck": "gulp release",
+    "prewebpack": "gulp release",
     "build": "gulp release:dist-img",
     "prebuild": "npm run webpack",
     "eslint": "eslint ./app/src/"
