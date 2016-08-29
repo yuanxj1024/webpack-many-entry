@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var a = require('./js/main.js');
-var b = require('./style.scss');
+require('./style.scss');
 
 $(function () {
-  console.log(a, b);
+  console.log(a);
 });
